@@ -83,6 +83,9 @@ export class CardComponent {
 
   @Input() name:string = ''
 
+  get filterMinions(){
+      return this.minions.filter(minion => minion.name === this.name)
+  }
 
 
 
