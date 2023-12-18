@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Minion } from '../interfaces/minion';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './card.component.html',
   styles: ``
 })
@@ -48,7 +49,7 @@ export class CardComponent {
         side: "malvado"
       },
       {
-        name: "Minioncé",
+        name: "Kevin",
         bio: "Le va el cante, dar la nota, ama los karaokes, es el rey y reina de la fiesta. Invítalo a tu fiesta o te arrepentirás.",
         img: "assets/img/minionce.jpg",
         birth: "1976",
@@ -79,6 +80,9 @@ export class CardComponent {
       this.favoriteMinion.push(minionName);
     }
   }
+
+  @Input() name:string = ''
+
 
 
 
